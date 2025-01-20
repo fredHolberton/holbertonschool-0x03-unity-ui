@@ -40,7 +40,6 @@ public class PlayerController : MonoBehaviour
         score = 0; 
         isTeleporting = false;
         winLoseBG.gameObject.SetActive(false);
-
     }
 
     // Update is called once per frame
