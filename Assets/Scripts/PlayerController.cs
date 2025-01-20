@@ -61,6 +61,11 @@ public class PlayerController : MonoBehaviour
             winLoseBG.gameObject.SetActive(true);
             StartCoroutine(LoadScene(3));
         }
+
+        if (Input.GetButtonDown("Cancel"))
+        {
+            SceneManager.LoadScene("menu");
+        }
     }
 
     void OnTriggerEnter(Collider other)
