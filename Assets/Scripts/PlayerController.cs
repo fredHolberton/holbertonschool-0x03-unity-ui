@@ -10,8 +10,12 @@ public class PlayerController : MonoBehaviour
 {
     // Speed of the player mouvement
     public float speed;
+    
     // Score text displayed on the ScoreText GameObject
     public TextMeshProUGUI scoreText;
+
+    // health Text displayed on HealthText GameObject
+    public TextMeshProUGUI healthText;
 
     // health of the player
     public int health;
@@ -29,7 +33,6 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         score = 0; 
         isTeleporting = false;
-        scoreText.text = "Score: 0";
     }
 
     // Update is called once per frame
@@ -54,13 +57,14 @@ public class PlayerController : MonoBehaviour
         {
             score += 1;
             //Debug.Log("Score: " + score);
-            this.SetScoreText();
+            SetScoreText();
             other.gameObject.SetActive(false);
         }
         else if (other.gameObject.tag == "Trap")
         {
             health -= 1;
-            Debug.Log("Health: " + health);
+            //Debug.Log("Health: " + health);
+            SetHealthText();
         }
         else if(other.gameObject.tag == "Goal")
         {
@@ -84,8 +88,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void SetScoreText()
+    void SetScoreText()
     {
         scoreText.text = "Score: " + score;
+    }
+
+    void SetHealthText()
+    {
+        healthText.text = "Health: " + health;
     }
 }
