@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     // Speed of the player mouvement
     public float speed;
+    // Score text displayed on the ScoreText GameObject
+    public TextMeshProUGUI scoreText;
 
     // health of the player
     public int health;
@@ -25,6 +29,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         score = 0; 
         isTeleporting = false;
+        scoreText.text = "Score: 0";
     }
 
     // Update is called once per frame
@@ -48,7 +53,8 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "Pickup")
         {
             score += 1;
-            Debug.Log("Score: " + score);
+            //Debug.Log("Score: " + score);
+            this.SetScoreText();
             other.gameObject.SetActive(false);
         }
         else if (other.gameObject.tag == "Trap")
@@ -76,5 +82,10 @@ public class PlayerController : MonoBehaviour
             }
             
         }
+    }
+
+    private void SetScoreText()
+    {
+        scoreText.text = "Score: " + score;
     }
 }
