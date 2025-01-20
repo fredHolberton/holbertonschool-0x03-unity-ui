@@ -17,6 +17,12 @@ public class PlayerController : MonoBehaviour
     // health Text displayed on HealthText GameObject
     public TextMeshProUGUI healthText;
 
+    // Text to display the final result of the game (Lost or Win)
+    public TextMeshProUGUI winLoseText;
+
+    // background of the final result
+    public Image winLoseBG;
+
     // health of the player
     public int health;
 
@@ -24,8 +30,8 @@ public class PlayerController : MonoBehaviour
     private float vertical;
     private float horizontal;
     private int score;
-
     private bool isTeleporting;
+    private Image WinLoseBG;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +39,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         score = 0; 
         isTeleporting = false;
+        winLoseBG.gameObject.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -46,8 +54,12 @@ public class PlayerController : MonoBehaviour
 
         if (health == 0)
         {
-            Debug.Log("Game Over!");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            //Debug.Log("Game Over!");
+            winLoseText.text = "Game Over!";
+            winLoseText.color = Color.white;
+            winLoseBG.color = Color.red;
+            winLoseBG.gameObject.SetActive(true);
+            StartCoroutine(LoadScene(3));
         }
     }
 
@@ -68,7 +80,12 @@ public class PlayerController : MonoBehaviour
         }
         else if(other.gameObject.tag == "Goal")
         {
-            Debug.Log("You win!");
+            //Debug.Log("You win!");
+            winLoseText.text = "You win!";
+            winLoseText.color = Color.black;
+            winLoseBG.color = Color.green;
+            winLoseBG.gameObject.SetActive(true);
+            StartCoroutine(LoadScene(3));
         }
         else if (other.gameObject.tag == "Teleporter")
         {
@@ -96,5 +113,12 @@ public class PlayerController : MonoBehaviour
     void SetHealthText()
     {
         healthText.text = "Health: " + health;
+    }
+
+    IEnumerator LoadScene(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
     }
 }

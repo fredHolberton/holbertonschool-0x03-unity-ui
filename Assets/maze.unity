@@ -4384,9 +4384,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a78bd353278c4d4986636adb0984257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 16
   scoreText: {fileID: 303368444}
   healthText: {fileID: 881176670}
+  winLoseText: {fileID: 1250072968}
+  winLoseBG: {fileID: 1293344505}
   health: 5
 --- !u!1 &1161673469
 GameObject:
@@ -6466,7 +6468,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 421789850411813821, guid: 13bf979ab19bc8a4f8b86881e4337f24, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.5
+      value: -26.3
       objectReference: {fileID: 0}
     - target: {fileID: 421789850411813821, guid: 13bf979ab19bc8a4f8b86881e4337f24, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6474,7 +6476,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 421789850411813821, guid: 13bf979ab19bc8a4f8b86881e4337f24, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.864713
+      value: 8.4
       objectReference: {fileID: 0}
     - target: {fileID: 421789850411813821, guid: 13bf979ab19bc8a4f8b86881e4337f24, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8432,13 +8434,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2077158307}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.36163414, y: -0, z: -0, w: 0.93232006}
-  m_LocalPosition: {x: 22, y: 34.6, z: 1.5}
+  m_LocalRotation: {x: 0.66877425, y: -0, z: -0, w: 0.74346554}
+  m_LocalPosition: {x: 11.04, y: 46, z: 7.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 42.401, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 83.945, y: 0, z: 0}
 --- !u!114 &2077158312
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour
     // game object to follow with the main camera
     public GameObject player;
 
-    float offset;
+    private float offset;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +19,5 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         transform.position = new Vector3(player.transform.position.x , transform.position.y, player.transform.position.z + offset);
-
     }
 }
