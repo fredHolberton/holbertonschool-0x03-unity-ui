@@ -5,3 +5,6 @@
 - a small and simple menu
 - a Canvas to display Score on the play screen.
 
+### About myself:
+Frédéric Urbani
+LikedIn : https://www.linkedin.com/in/fr%C3%A9d%C3%A9ric-urbani-16211759/
